@@ -1,4 +1,4 @@
-# Aplikasi Web "XYZ"
+# Firefly iii
 
 
 ## Sekilas Tentang
@@ -60,10 +60,8 @@ Beberapa fungsi pada website Firefly III diantaranya :
 
 ## Pembahasan
 
-- Pendapat anda tentang aplikasi web ini
-    - kelebihan
-    - kekurangan
-- Bandingkan dengan aplikasi web lain yang sejenis
+**Firefly iii** adalah aplikasi manajemen finansial berbasis web untuk mencatat urusan finansial anda. Aplikasi ini memiliki beberapa keunggulan, yaitu :
+- Aplikasi ini gratis dan open-source sehingga semua orang mempunyai akses ke aplikasi ini
 
 
 ## Referensi
