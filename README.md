@@ -1,4 +1,4 @@
-# Firefly iii
+# Firefly III
 
 
 ## Sekilas Tentang
@@ -83,7 +83,16 @@ Beberapa fungsi pada website Firefly III diantaranya :
 - Aplikasi ini gratis dan open-source sehingga semua orang mempunyai akses ke aplikasi ini
 - Aplikasi ini berbasis web yang bisa diinstall atau dihost di server milik sendiri dengan proses instalasi yang terdokumentasi dengan baik
 - Fitur manajemen keuangannya sangat lengkap dengan interface yang modern
-- Dokumentasi aplikasi sangat lengkap yang bisa diakses di websitefirefly iii
+- Terapat fitur otomasi untuk mencatat transaksi yang berulang
+- Dokumentasi aplikasi sangat lengkap yang bisa diakses di website Firefly III
+
+Aplikasi ini juga memiliki beberapa kekurangan, yaitu :
+- Tidak memiliki tampilan darkmode
+- Instalasi terdokumentasi dengan baik tapi lumayan rumit
+
+Sebagai komparasi kami membandingkan aplikasi ini dengan aplikasi GnuCash, perbedaannya :
+- Firefly III merupakan aplikasi berbasis web yang dapat di host disebuah website, sementara GnuCash merupakan aplikasi yang diinstall langsung di komputer personal masing-masing. Sehingga pada akhirnya GnuCash memiliki instalasi yang lebih mudah daripada Firefly II, tetapi jika Firefly di host disebuah server menjadi lebih protabel karena bisa diakses dengan device apa saja.
+- Tampilan Firefly III lebih mdoern dari GnuCash dan juga lebih mudah dimengerti
 
 
 ## Referensi
