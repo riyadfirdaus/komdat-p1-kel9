@@ -3,7 +3,7 @@
 
 ## Sekilas Tentang
 
-Firefly III adalah manajer (dihosting sendiri) untuk keuangan pribadi. Platfrom open source Ini dapat membantu dalam melacak pengeluaran dan pendapatan diri sendiri, sehingga kita dapat membelanjakan lebih sedikit dan menabung lebih banyak.
+Firefly III adalah manajer (dihosting sendiri) untuk keuangan pribadi. Firefly III termasuk ke dalam Platform open source yang berfungsi dapat membantu dalam melacak pengeluaran dan pendapatan diri sendiri, sehingga kita dapat membelanjakan lebih sedikit dan menabung lebih banyak tanpa harus mengunggah catatan keuangan mereka ke cloud.
 
 
 ## Instalasi
