@@ -65,6 +65,10 @@ Beberapa fungsi pada website Firefly III diantaranya :
 7. Mendukung mata uang apapun termasuk crypto
 
 - Isi dengan data real/dummy (jangan kosongan) dan sertakan beberapa screenshot
+1. Menambahkan inputan pada laman Budgets
+
+
+2. Menambahkan inputan pada laman Bills
 
 
 ## Pembahasan
