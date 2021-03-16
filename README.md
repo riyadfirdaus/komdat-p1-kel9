@@ -3,7 +3,7 @@
 
 ## Sekilas Tentang
 
-Deskripsi singkat tentang aplikasi tsb.
+Firefly III adalah manajer (dihosting sendiri) untuk keuangan pribadi. Platfrom open source Ini dapat membantu dalam melacak pengeluaran dan pendapatan diri sendiri, sehingga kita dapat membelanjakan lebih sedikit dan menabung lebih banyak.
 
 
 ## Instalasi
@@ -55,4 +55,4 @@ Skrip shell untuk otomatisasi instalasi, konfigurasi, dan maintenance.
 
 ## Referensi
 
-Cantumkan tiap sumber informasi yang anda pakai.
+https://www.firefly-iii.org/
