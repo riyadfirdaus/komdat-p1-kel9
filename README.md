@@ -65,10 +65,14 @@ Beberapa fungsi pada website Firefly III diantaranya :
 7. Mendukung mata uang apapun termasuk crypto
 
 - Isi dengan data real/dummy (jangan kosongan) dan sertakan beberapa screenshot
-1. Menambahkan inputan pada laman Budgets
 
+1. Menambahkan inputan pada laman Budgets
+![create budgets](https://user-images.githubusercontent.com/47895564/111331620-a6227780-86a3-11eb-9a84-9d8989452e3a.jpg)
+![create budgets 2](https://user-images.githubusercontent.com/47895564/111331634-aa4e9500-86a3-11eb-8978-5c868f4b36de.jpg)
 
 2. Menambahkan inputan pada laman Bills
+![create bills](https://user-images.githubusercontent.com/47895564/111331567-999e1f00-86a3-11eb-9aed-978ff751b3ad.jpg)
+![create bills 2](https://user-images.githubusercontent.com/47895564/111331590-a02c9680-86a3-11eb-9d28-235a50a5834b.jpg)
 
 
 ## Pembahasan
