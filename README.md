@@ -81,6 +81,9 @@ Beberapa fungsi pada website Firefly III diantaranya :
 
 **Firefly iii** adalah aplikasi manajemen finansial berbasis web untuk mencatat urusan finansial anda. Aplikasi ini memiliki beberapa keunggulan, yaitu :
 - Aplikasi ini gratis dan open-source sehingga semua orang mempunyai akses ke aplikasi ini
+- Aplikasi ini berbasis web yang bisa diinstall atau dihost di server milik sendiri dengan proses instalasi yang terdokumentasi dengan baik
+- Fitur manajemen keuangannya sangat lengkap dengan interface yang modern
+- Dokumentasi aplikasi sangat lengkap yang bisa diakses di websitefirefly iii
 
 
 ## Referensi
