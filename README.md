@@ -41,9 +41,16 @@ Skrip shell untuk otomatisasi instalasi, konfigurasi, dan maintenance.
 ## Cara Pemakaian
 
 - Tampilan aplikasi web
-Tampilan Dashboard
+a. Tampilan Dashboard
 ![dashboard](https://user-images.githubusercontent.com/47895564/111324152-18dc2480-869d-11eb-8a91-e77c922ec4f3.jpg)
 
+b. Tampilan Laman Budgets
+
+c. Tampilan Laman Bills
+![bills](https://user-images.githubusercontent.com/47895564/111328439-d288c480-86a0-11eb-9233-a6347455eaac.jpg)
+
+d. Tampilan Laman Reports
+![reports](https://user-images.githubusercontent.com/47895564/111328460-d74d7880-86a0-11eb-9807-61bd51145d3c.jpg)
 
 - Fungsi-fungsi utama
 Beberapa fungsi pada website Firefly III diantaranya :
