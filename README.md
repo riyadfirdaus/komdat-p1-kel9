@@ -45,6 +45,7 @@ a. Tampilan Dashboard
 ![dashboard](https://user-images.githubusercontent.com/47895564/111324152-18dc2480-869d-11eb-8a91-e77c922ec4f3.jpg)
 
 b. Tampilan Laman Budgets
+![budgets](https://user-images.githubusercontent.com/47895564/111328276-ae2ce800-86a0-11eb-8c19-58a0b4581273.jpg)
 
 c. Tampilan Laman Bills
 ![bills](https://user-images.githubusercontent.com/47895564/111328439-d288c480-86a0-11eb-9233-a6347455eaac.jpg)
