@@ -23,7 +23,7 @@ Firefly III adalah manajer (dihosting sendiri) untuk keuangan pribadi. Firefly I
 
 ### Proses Instalasi :
 #### Step 1: Update dan Upgrade Server
-Pertama, buka terminal lalu lakukan update dan upgrade pada sistem. Kita juga akan memasang tool yang dibutuhkan untuk melakukan proses instalasi seperti `nginx`, `PHP`, `git`, `vim`.
+Pertama, buka terminal lalu lakukan update dan upgrade pada sistem. Kita juga akan memasang tool yang dibutuhkan untuk melakukan proses instalasi seperti ```Nginx```, ```PHP```, ````git````, dan juga ```vim``` sebagai text editor.
     ```
     $ sudo apt update && sudo apt upgrade
     $ sudo apt install vim git nginx curl -y
@@ -131,7 +131,7 @@ $ sudo php artisan passport:install
 
 #### Step 6: Buka halaman Firefly III
 Sekarang, anda sudah bisa mengakses Firefly III menggunakan aplikasi web melalui ```http://domain/```. Domain tersebut kita isi dengan domain server linux kita masing-masing. Pada contoh dibawah kita menggunakan domain ```172.28.218.207``` sebagai server.
-
+![Login Page](https://computingforgeeks.com/wp-content/uploads/2020/07/Firefly-login-page.png)
 
 ## Cara Pemakaian
 
