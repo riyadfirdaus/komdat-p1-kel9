@@ -1,4 +1,10 @@
 # Firefly III
+<!-- PROJECT LOGO -->
+<br />
+<p align="center">
+    <img src="https://www.firefly-iii.org/static/screenshots/imac-complete.png" width=480px/>
+</p>
+
 [Sekilas Tentang](#sekilas-tentang) | [Instalasi](#instalasi) | [Cara Pemakaian](#cara-pemakaian) | [Pembahasan](#pembahasan) | [Referensi](#referensi)
 :---:|:---:|:---:|:---:|:---:
 ## Sekilas Tentang
@@ -25,24 +31,26 @@ Pertama, buka terminal lalu lakukan update dan upgrade pada sistem. Kita juga ak
 #### Step 2: Install Webserver dan PHP
 Untuk menginstall Firefly III, kita dapat menggunakan Apache atau Nginx. Namun kali ini kita akan mencoba menggunakan webserver Nginx.
 
-1. Install komponen php yang dibutuhkan.
+##### Install komponen php yang dibutuhkan.
     ```
     $ sudo apt install software-properties-common
     $ sudo add-apt-repository ppa:ondrej/php
     $ sudo apt update
     $ sudo apt install -y php7.3 php7.3-{cli,zip,gd,fpm,json,common,mysql,zip,mbstring,curl,xml,bcmath,imap,ldap,intl}
     ```
-Kemudian cek apakah modul php telah berjalan pada server dengan perintah
+    Kemudian cek apakah modul php telah berjalan pada server dengan perintah
     ```
     $ sudo systemctl status php7.3-fpm
     ```
-2. Lakukan konfigurasi pada web server. 
-Pertama, kita backup konfigurasi default sebelum menambahkan konfigurasi baru.
+    
+##### Lakukan konfigurasi pada web server. 
+Pertama, lakukan backup konfigurasi default sebelum menambahkan konfigurasi baru.
     ```
     $ cd /etc/nginx/sites-enabled/
     $ sudo mv default{,.bak}
     ```
-Kemudian Buat file konfigurasi baru bernama ``` firefly.conf ``` lalu  isi konfigurasi tersebut dengan konfigurasi seperti dibawah menggunakan text editor
+    
+Kemudian Buat file konfigurasi baru bernama ``` firefly.conf ``` pada direktori ```/etc/nginx/sites-enabled/```. Lalu  isi konfigurasi tersebut dengan konfigurasi seperti dibawah ini 
     ```
     $ sudo vim /etc/nginx/sites-enabled/firefly.conf
 
@@ -67,15 +75,15 @@ Kemudian Buat file konfigurasi baru bernama ``` firefly.conf ``` lalu  isi konfi
         }
     }
     ```
-    Setelah konfigurasi disimpan, restart php dan juga nginx
+Setelah konfigurasi disimpan, restart php dan juga nginx
     ```
     $ sudo systemctl restart nginx php7.3-fpm
     ```
 
 #### Step 3: Install dan Atur Database
-Pada tutorial kali ini, kita akan menggunakan MariaDB sebagai database server-nya. Tutorial pemasangan MariaDB dapat dilihat pada link berikut
+Pada tutorial kali ini, kita akan menggunakan MariaDB sebagai database server yang akan digunakan. Tutorial pemasangan MariaDB pada ubuntu dapat dilihat pada link berikut
 
-Setelah databasenya terinstall, langkah berikutnya adalah membuat user serta database untuk aplikasi Firefly III. Kita dapat membuat nama database serta user sesuai dengan preferensi masing-masing
+Setelah databasenya terinstall, langkah berikutnya adalah membuat user serta database untuk aplikasi Firefly III. Kita dapat membuat nama database serta user sesuai dengan preferensi masing-masing. Pada contoh tutorial ini kita akan menggunakan
 ```
 $ mysql -u root -p
 
