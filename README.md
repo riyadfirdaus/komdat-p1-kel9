@@ -1,41 +1,128 @@
 # Firefly III
-
-
+[Sekilas Tentang](#sekilas-tentang) | [Instalasi](#instalasi) | [Cara Pemakaian](#cara-pemakaian) | [Pembahasan](#pembahasan) | [Referensi](#referensi)
+:---:|:---:|:---:|:---:|:---:
 ## Sekilas Tentang
 
 Firefly III adalah manajer (dihosting sendiri) untuk keuangan pribadi. Firefly III termasuk ke dalam Platform open source yang berfungsi dapat membantu dalam melacak pengeluaran dan pendapatan diri sendiri, sehingga kita dapat membelanjakan lebih sedikit dan menabung lebih banyak tanpa harus mengunggah catatan keuangan mereka ke cloud.
 
 
 ## Instalasi
+[`^ kembali ke atas ^`](#)
 
-- Prasyarat, apa saja yang harus diinstal sebelumnya.
-- Langkah instalasi dalam CLI.
+### Kebutuhan Sistem :
+- Web Server.
+- Database Server
+- PHP 7.3+
+- Composer
 
+### Proses Instalasi :
+#### Step 1: Update dan Upgrade Server
+Pertama, buka terminal lalu lakukan update dan upgrade pada sistem. Kita juga akan memasang tool yang dibutuhkan untuk melakukan proses instalasi seperti `nginx`, `PHP`, `git`, `vim`.
+    ```
+    $ sudo apt update && sudo apt upgrade
+    $ sudo apt install vim git nginx curl -y
+    ```
+#### Step 2: Install Webserver dan PHP
+Untuk menginstall Firefly III, kita dapat menggunakan Apache atau Nginx. Namun kali ini kita akan mencoba menggunakan webserver Nginx.
 
-## Konfigurasi (opsional)
+1. Install komponen php yang dibutuhkan.
+    ```
+    $ sudo apt install software-properties-common
+    $ sudo add-apt-repository ppa:ondrej/php
+    $ sudo apt update
+    $ sudo apt install -y php7.3 php7.3-{cli,zip,gd,fpm,json,common,mysql,zip,mbstring,curl,xml,bcmath,imap,ldap,intl}
+    ```
+Kemudian cek apakah modul php telah berjalan pada server dengan perintah
+    ```
+    $ sudo systemctl status php7.3-fpm
+    ```
+2. Lakukan konfigurasi pada web server. 
+Pertama, kita backup konfigurasi default sebelum menambahkan konfigurasi baru.
+    ```
+    $ cd /etc/nginx/sites-enabled/
+    $ sudo mv default{,.bak}
+    ```
+Kemudian Buat file konfigurasi baru bernama ``` firefly.conf ``` lalu  isi konfigurasi tersebut dengan konfigurasi seperti dibawah menggunakan text editor
+    ```
+    $ sudo vim /etc/nginx/sites-enabled/firefly.conf
 
-Setting server tambahan yang diperlukan untuk meningkatkan fungsi dan kinerja aplikasi, misalnya:
-- batas upload file
-- batas memori
-- dll
+    server {
+        listen       80 default_server;
+        listen       [::]:80 default_server;
+        server_name  example.com;
+        root         /var/www/html/firefly-iii/public;
+        index index.html index.htm index.php;
 
-Plugin untuk fungsi tambahan
-- login dengan Google/Facebook
-- editor Markdown
-- dll
+        location / {
+                try_files $uri /index.php$is_args$args;
+        }
 
+        location ~ \.php$ {
+        fastcgi_pass unix:/run/php/php7.3-fpm.sock;
+        fastcgi_index index.php;
+        fastcgi_read_timeout 240;
+        fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+        include fastcgi_params;
+        fastcgi_split_path_info ^(.+.php)(/.+)$;
+        }
+    }
+    ```
+    Setelah konfigurasi disimpan, restart php dan juga nginx
+    ```
+    $ sudo systemctl restart nginx php7.3-fpm
+    ```
 
-##  Maintenance (opsional)
+#### Step 3: Install dan Atur Database
+Pada tutorial kali ini, kita akan menggunakan MariaDB sebagai database server-nya. Tutorial pemasangan MariaDB dapat dilihat pada link berikut
 
-Setting tambahan untuk maintenance secara periodik, misalnya:
-- buat backup database tiap pekan
-- hapus direktori sampah tiap hari
-- dll
+Setelah databasenya terinstall, langkah berikutnya adalah membuat user serta database untuk aplikasi Firefly III. Kita dapat membuat nama database serta user sesuai dengan preferensi masing-masing
+```
+$ mysql -u root -p
 
+CREATE DATABASE firefly_database;
+CREATE USER 'fireflyuser'@'localhost' IDENTIFIED BY 'StrongPassword';
+GRANT ALL PRIVILEGES ON firefly_database. * TO 'fireflyuser'@'localhost';
+FLUSH PRIVILEGES;
+exit;
+```
 
-## Otomatisasi (opsional)
+#### Step 4: Install PHP Composer
+Composer dibutuhkan untuk menginstall aplikasi Firefly III pada server. Composer dapat diinstal dengan perintah dibawah ini.
+```
+$ cd ~
+$ curl -sS https://getcomposer.org/installer -o composer-setup.php
+$ sudo php composer-setup.php --install-dir=/usr/local/bin --filename=composer
+```
+Setelah terinstall, cek apakah composer telah berjalan
+```
+$ composer -V
+```
 
-Skrip shell untuk otomatisasi instalasi, konfigurasi, dan maintenance.
+#### Step 5: Install Firefly III
+Setelah composer diinstall, ganti direktori yang akan merujuk root dari file Firefly III pada Nginx. Lalu, jalankan composer.
+```
+$ cd /var/www/html/
+$ composer create-project grumpydictator/firefly-iii --no-dev --prefer-dist firefly-iii 5.4.6 
+```
+
+Pada direktori yang sama, ubah akses menjadi seperti dibawah
+```
+$ sudo chown -R www-data:www-data firefly-iii
+$ sudo chmod -R 775 firefly-iii/storage
+```
+
+##### Lakukan migrasi database
+Langkah ini penting dilakukan karena Firefly III membutuhkan database untuk berjalan. Lakukan perintah dibawah untuk mengatur database tersebut.
+```
+$ cd /var/www/html/firefly-iii
+
+$ sudo php artisan migrate:refresh --seed
+$ sudo php artisan firefly-iii:upgrade-database
+$ sudo php artisan passport:install
+```
+
+#### Step 6: Buka halaman Firefly III
+Sekarang, anda sudah bisa mengakses Firefly III menggunakan aplikasi web melalui ```http://domain/```. Domain tersebut kita isi dengan domain server linux kita masing-masing. Pada contoh dibawah kita menggunakan domain ```172.28.218.207``` sebagai server.
 
 
 ## Cara Pemakaian
