@@ -203,9 +203,11 @@ Beberapa fungsi pada website Firefly III diantaranya :
 - Tidak memiliki tampilan darkmode
 - Instalasi terdokumentasi dengan baik tapi lumayan rumit
 
-Sebagai komparasi kami membandingkan aplikasi ini dengan aplikasi GnuCash, perbedaannya :
-- Firefly III merupakan aplikasi berbasis web yang dapat di host disebuah website, sementara GnuCash merupakan aplikasi yang diinstall langsung di komputer personal masing-masing. Sehingga pada akhirnya GnuCash memiliki instalasi yang lebih mudah daripada Firefly II, tetapi jika Firefly di host disebuah server menjadi lebih protabel karena bisa diakses dengan device apa saja.
-- Tampilan Firefly III lebih mdoern dari GnuCash dan juga lebih mudah dimengerti
+### Komparasi
+Sebagai komparasi, kami membandingkan aplikasi ini dengan aplikasi GnuCash, perbedaannya antara lain:
+- Firefly III merupakan aplikasi berbasis web yang dapat dihost pada sebuah website, sementara GnuCash merupakan aplikasi yang diinstall langsung di komputer personal masing-masing sehingga pada akhirnya GnuCash memiliki instalasi yang lebih mudah daripada Firefly III. Namun, jika Firefly di host disebuah server menjadi lebih protabel karena bisa diakses dengan device apa saja.
+- Tampilan Firefly III lebih mdoern dari GnuCash dan juga lebih mudah dimengerti.
+- Pada Firefly III terdapat fitur automasi built-in untuk mempermudah penanganan transaksi sedangkan GnuCash tidak.
 
 
 ## Referensi
