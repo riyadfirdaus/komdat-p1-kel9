@@ -24,10 +24,11 @@ Firefly III adalah manajer (dihosting sendiri) untuk keuangan pribadi. Firefly I
 ### Proses Instalasi :
 #### Step 1: Update dan Upgrade Server
 Pertama, buka terminal lalu lakukan update dan upgrade pada sistem. Kita juga akan memasang tool yang dibutuhkan untuk melakukan proses instalasi seperti ```Nginx```, ```PHP```, ````git````, dan juga ```vim``` sebagai text editor.
-    ```
-    $ sudo apt update && sudo apt upgrade
-    $ sudo apt install vim git nginx curl -y
-    ```
+
+```
+$ sudo apt update && sudo apt upgrade
+$ sudo apt install vim git nginx curl -y
+```
 #### Step 2: Install Webserver dan PHP
 Untuk menginstall Firefly III, kita dapat menggunakan Apache atau Nginx. Namun kali ini kita akan mencoba menggunakan webserver Nginx.
 
@@ -38,7 +39,7 @@ Untuk menginstall Firefly III, kita dapat menggunakan Apache atau Nginx. Namun k
     $ sudo apt update
     $ sudo apt install -y php7.3 php7.3-{cli,zip,gd,fpm,json,common,mysql,zip,mbstring,curl,xml,bcmath,imap,ldap,intl}
     ```
-    Kemudian cek apakah modul php telah berjalan pada server dengan perintah
+Kemudian cek apakah modul php telah berjalan pada server dengan perintah    
     ```
     $ sudo systemctl status php7.3-fpm
     ```
