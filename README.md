@@ -51,7 +51,7 @@ Pertama, lakukan backup konfigurasi default sebelum menambahkan konfigurasi baru
     $ sudo mv default{,.bak}
     ```
     
-Kemudian Buat file konfigurasi baru bernama ``` firefly.conf ``` pada direktori ```/etc/nginx/sites-enabled/```. Lalu  isi konfigurasi tersebut dengan konfigurasi seperti dibawah ini 
+Kemudian Buat file konfigurasi baru bernama ``` firefly.conf ``` pada direktori ```/etc/nginx/sites-enabled/``` . Lalu  isi konfigurasi tersebut dengan konfigurasi seperti dibawah ini 
     ```
     $ sudo vim /etc/nginx/sites-enabled/firefly.conf
 
@@ -83,6 +83,7 @@ Setelah konfigurasi disimpan, restart php dan juga nginx
 
 #### Step 3: Install dan Atur Database
 Pada tutorial kali ini, kita akan menggunakan MariaDB sebagai database server yang akan digunakan. Tutorial pemasangan MariaDB pada ubuntu dapat dilihat pada link berikut
+[How to install MariaDB on Ubuntu](https://computingforgeeks.com/how-to-install-mariadb-on-ubuntu-focal-fossa/)
 
 Setelah databasenya terinstall, langkah berikutnya adalah membuat user serta database untuk aplikasi Firefly III. Kita dapat membuat nama database serta user sesuai dengan preferensi masing-masing. Pada contoh tutorial ini kita akan menggunakan
 ```
@@ -131,37 +132,39 @@ $ sudo php artisan passport:install
 ```
 
 #### Step 6: Buka halaman Firefly III
-Sekarang, anda sudah bisa mengakses Firefly III menggunakan aplikasi web melalui ```http://domain/```. Domain tersebut kita isi dengan domain server linux kita masing-masing. Pada contoh dibawah kita menggunakan domain ```172.28.218.207``` sebagai server.
+Sekarang, anda sudah bisa mengakses Firefly III menggunakan aplikasi web melalui ```http://domain/```. Domain tersebut kita isi dengan domain server linux kita masing-masing. Pada contoh dibawah, website firefly menggunakan domain ```172.28.218.207``` sebagai server.
 ![Login Page](https://computingforgeeks.com/wp-content/uploads/2020/07/Firefly-login-page.png)
 
+## Konfigurasi
+### Konfigurasi User
+Konfigurasi dapat dilakukan dengan mengakses menu *Configuration* dari sidebar. Pada tab general, kita dapat mengkonfigurasi hal-hal umum seperti bahasa dan juga tanggal. Pada tab Home Screen kita bisa mengatur akun rekening apa saja yang ingin ditampilkan pada home screen. Kemudian tab Layout digunakan untuk mengatur layout transaksi.
+![Konfigurasi](img/pref-general.png)
+
+### Konfigurasi Admin
+Untuk administrator, konfigurasi dapat diakses melalui menu *Option > Administration > Configuration* pada sidebar. 
+![Konfigurasi](/img/config-admin.png)
+
+## Maintenance
+Untuk maintenance, yang harus dilakukan adalah melakukan update aplikasi secara berkala dan juga menghapus cache. Maintenance ini dapat dilakukan melalui menu *Option > Administration* pada sidebar
+![Maintentance](/img/maintenance.png)
+
 ## Cara Pemakaian
+### Tampilan aplikasi web
 
-- Tampilan aplikasi web
-
-a. Tampilan Dashboard
+1. Tampilan Dashboard
 ![dashboard](https://user-images.githubusercontent.com/47895564/111324152-18dc2480-869d-11eb-8a91-e77c922ec4f3.jpg)
 
-b. Tampilan Laman Budgets
+2. Tampilan Laman Budgets
 ![budgets](https://user-images.githubusercontent.com/47895564/111328276-ae2ce800-86a0-11eb-8c19-58a0b4581273.jpg)
 
-c. Tampilan Laman Bills
+3. Tampilan Laman Bills
 ![bills](https://user-images.githubusercontent.com/47895564/111328439-d288c480-86a0-11eb-9233-a6347455eaac.jpg)
 
-d. Tampilan Laman Reports
+4.Tampilan Laman Reports
 ![reports](https://user-images.githubusercontent.com/47895564/111328460-d74d7880-86a0-11eb-9807-61bd51145d3c.jpg)
 
-- Fungsi-fungsi utama
-Beberapa fungsi pada website Firefly III diantaranya :
-1. Membuat transaksi berulang untuk mengelola keuangan pengguna
-2. Pengguna bisa mengatur penanganan transaksi sendiri sesuai aturan masing-masing pengguna
-3. Sistem pembukuan entri ganda
-4. Menabung dengan tujuan yang bisa diatur sendiri
-5. Melihat laporan pendapatan dan pengeluaran
-6. Otentikasi 2 faktor untuk keamanan ekstra
-7. Mendukung mata uang apapun termasuk crypto
 
-- Isi dengan data real/dummy (jangan kosongan) dan sertakan beberapa screenshot
-
+### Contoh Pemakaian
 1. Menambahkan inputan "Stock Investment" pada laman Budgets
 ![create budgets](https://user-images.githubusercontent.com/47895564/111331620-a6227780-86a3-11eb-9a84-9d8989452e3a.jpg)
 
@@ -174,15 +177,25 @@ Beberapa fungsi pada website Firefly III diantaranya :
 
 
 ## Pembahasan
+### Fungsi-fungsi utama
+Beberapa fungsi pada website Firefly III diantaranya :
+1. Membuat transaksi berulang untuk mengelola keuangan pengguna
+2. Pengguna bisa mengatur penanganan transaksi sendiri sesuai aturan masing-masing pengguna
+3. Sistem pembukuan entri ganda
+4. Menabung dengan tujuan yang bisa diatur sendiri
+5. Melihat laporan pendapatan dan pengeluaran
+6. Otentikasi 2 faktor untuk keamanan ekstra
+7. Mendukung mata uang apapun termasuk crypto
 
-**Firefly iii** adalah aplikasi manajemen finansial berbasis web untuk mencatat urusan finansial anda. Aplikasi ini memiliki beberapa keunggulan, yaitu :
+
+### Kelebihan
 - Aplikasi ini gratis dan open-source sehingga semua orang mempunyai akses ke aplikasi ini
 - Aplikasi ini berbasis web yang bisa diinstall atau dihost di server milik sendiri dengan proses instalasi yang terdokumentasi dengan baik
 - Fitur manajemen keuangannya sangat lengkap dengan interface yang modern
 - Terapat fitur otomasi untuk mencatat transaksi yang berulang
 - Dokumentasi aplikasi sangat lengkap yang bisa diakses di website Firefly III
 
-Aplikasi ini juga memiliki beberapa kekurangan, yaitu :
+### Kekurangan
 - Tidak memiliki tampilan darkmode
 - Instalasi terdokumentasi dengan baik tapi lumayan rumit
 
