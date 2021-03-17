@@ -192,5 +192,6 @@ Sebagai komparasi kami membandingkan aplikasi ini dengan aplikasi GnuCash, perbe
 
 
 ## Referensi
-
 https://www.firefly-iii.org/
+https://computingforgeeks.com/setup-firefly-personal-finance-manager-on-ubuntu/
+https://computingforgeeks.com/how-to-install-mariadb-on-ubuntu-focal-fossa/
