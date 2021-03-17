@@ -46,13 +46,15 @@ Kemudian cek apakah modul php telah berjalan pada server dengan perintah
     
 ##### Lakukan konfigurasi pada web server. 
 Pertama, lakukan backup konfigurasi default sebelum menambahkan konfigurasi baru.
-    ```
+
+```
     $ cd /etc/nginx/sites-enabled/
     $ sudo mv default{,.bak}
-    ```
+```
     
 Kemudian Buat file konfigurasi baru bernama ``` firefly.conf ``` pada direktori ```/etc/nginx/sites-enabled/``` . Lalu  isi konfigurasi tersebut dengan konfigurasi seperti dibawah ini 
-    ```
+
+```
     $ sudo vim /etc/nginx/sites-enabled/firefly.conf
 
     server {
