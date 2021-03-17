@@ -77,11 +77,13 @@ Kemudian Buat file konfigurasi baru bernama ``` firefly.conf ``` pada direktori 
         fastcgi_split_path_info ^(.+.php)(/.+)$;
         }
     }
-    ```
+```
+
 Setelah konfigurasi disimpan, restart php dan juga nginx
-    ```
+
+```
     $ sudo systemctl restart nginx php7.3-fpm
-    ```
+```
 
 #### Step 3: Install dan Atur Database
 Pada tutorial kali ini, kita akan menggunakan MariaDB sebagai database server yang akan digunakan. Tutorial pemasangan MariaDB pada ubuntu dapat dilihat pada link berikut
