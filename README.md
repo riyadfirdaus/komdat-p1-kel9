@@ -126,7 +126,21 @@ $ sudo chmod -R 775 firefly-iii/storage
 ```
 
 ##### Lakukan migrasi database
-Langkah ini penting dilakukan karena Firefly III membutuhkan database untuk berjalan. Lakukan perintah dibawah untuk mengatur database tersebut.
+Buka file .env pada directory firefly
+```
+$ sudo vim /var/www/html/firefly-iii/.env
+```
+
+Kemudian, lakukan pengaturan database sesuai dengan dibawah ini
+```
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=firefly_database
+DB_USERNAME=fireflyuser
+DB_PASSWORD=StrongPassword
+```
+Lalu Lakukan migrasi database dengan command dibawah
 ```
 $ cd /var/www/html/firefly-iii
 
